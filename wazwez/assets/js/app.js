@@ -3,6 +3,7 @@ const dropDown = document.querySelectorAll(".accordion-button");
 
 let index;
 
+// Accordion
 for (index = 0; index < dropDown.length; index++) {
   dropDown[index].addEventListener("click", function () {
     this.classList.toggle("to-open");
@@ -15,6 +16,15 @@ for (index = 0; index < dropDown.length; index++) {
   });
 }
 
+// Insert Task
 function btnCREATETASK() {
   document.querySelector("#createTASK").classList.remove("display-task");
+}
+
+// Dropdown
+const dropDownBtn = document.getElementById("dropdownBTN").addEventListener("click", ddBTN);
+const contentShow = document.querySelector("#showddCONTENT");
+
+function ddBTN() {
+  contentShow.classList.toggle("dropdown-content-show");
 }

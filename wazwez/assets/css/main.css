@@ -202,6 +202,7 @@ main {
 
  /* || FILTER SECTION */
 .filter {
+	/* border: 1px solid black; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -214,7 +215,18 @@ main {
 	font-weight: 500;
 }
 
+/* || DROPDOWN SECTION */
 .dropdown {
+	position: relative;
+	/* border: 1px solid yellow; */
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.dropdown-btn {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -226,9 +238,57 @@ main {
 	cursor: pointer;
 }
 
-.dropdown i {
+.dropdown-btn span {
+	color: var(--primary-color);
+	font-weight: 500;
+	margin-left: 0.5rem;
+}
+
+.dropdown-btn i {
 	position: relative;
 	top: 4px;
+	cursor: pointer;
+}
+
+.dropdown-content {
+	border: 1px solid var(--out-border-top);
+	background-color: var(--bg-color);
+	border-radius: 8px;
+	position: absolute;
+	top: 3.5rem;
+	z-index: 1;
+	padding: 1rem;
+	width: 13vw;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.dropdown-content-show {
+	display: none;
+}
+
+.dropdown-content label {
+	/* border: 1px solid gold; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dropdown-content label p, .dropdown-content label input[type="radio"] {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.dropdown-content label p {
+	font-size: 14px;
+	color: var(--primary-text-color);
+}
+
+.dropdown-content label input[type="radio"] {
+	accent-color: var(--primary-color);
+	width: 18px;
+	height: 18px;
 }
 
 /* || CREATE TASK SECTION */
@@ -256,6 +316,7 @@ main {
 	border-style: none;
 	font-weight: 500;
 	flex: 1;
+	font-size: 16px;
 }
 
 .decs-date {
@@ -534,6 +595,12 @@ i.deleted-sub-do-list {
 	nav {
 		padding: 0;
 	}
+
+	.dropdown-content {
+		position: absolute;
+		width: 140px;
+		top: 3.5rem;
+	}
 	
 }
 
@@ -569,6 +636,12 @@ i.deleted-sub-do-list {
 
 	.decs-date {
 		margin-left: 3.8rem;
+	}
+
+	.dropdown-content {
+		position: absolute;
+		width: 140px;
+		top: 3.5rem;
 	}
 
 	.output {
@@ -688,7 +761,7 @@ i.deleted-sub-do-list {
 		display: none;
 	}
 
-	.filter p, .dropdown {
+	.filter p, .dropdown-btn {
 		position: relative;
 	}
 
@@ -696,13 +769,28 @@ i.deleted-sub-do-list {
 		font-size: 14px;
 	}
 
-	.dropdown {
+	.dropdown-btn {
 		width: 90px;
 		height: 30px;
 	}
 
-	.dropdown > span{
+	.dropdown-btn > span{
 		font-size: 10px;
+	}
+
+	.dropdown-content {
+		position: absolute;
+		width: 100px;
+		top: 2.4rem;
+	}
+
+	.dropdown-content label p {
+		font-size: 10px;
+	}
+
+	.dropdown-content label input[type="radio"] {
+		height: 12px;
+		width: 12px;
 	}
 
 	.accordion-item {
