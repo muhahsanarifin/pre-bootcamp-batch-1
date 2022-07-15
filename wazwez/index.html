@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author"	content="MUH. AHSAN">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="icon" type="image/x-icon" href="./assets/favicon/wazwez-favicon.png">
+		<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+		<title>wazwez.</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="navbar">
+					<div class="logo">
+						<a href="#"><img src="./assets/image/wazwez-logo.png" alt="wazwez"></a>
+					</div>
+					<div class="notification">
+						<img src="./assets/icons/notification.svg" alt="notification">
+					</div>
+					<div class="user-profile">
+						<img src="./assets/icons/Profile - User.svg" alt="User Profile">
+						<p>Username</p>
+						<i><img src="./assets/icons/Arrow - Down 2.svg" alt="Arrow Down 2"></i>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<section class="content"> <!--CONTENT SECTION-->
+					<div class="task">					
+						<div class="title-plus-cta">
+							<div class="title-desc">
+								<p>MY TASK</p>
+								<div class="frame-title-desc">
+									<h2>To Do List</h2>
+									<p>Buat List Tugas Harian saya</p>
+								</div>
+							</div>
+							<div class="button" id="btnCREATETASK">
+								<i><img src="./assets/icons/Plus - 1.svg" alt=""></i>
+								<p>Tambah Tugas</p>
+							</div>
+						</div>
+						<div class="filter"> <!--FILTER SECTION-->
+							<p>Sort By</p>
+							<div class="dropdown">
+								<span>By Tanggal</span>
+								<i><img src="./assets/icons/Arrow - Down 2.svg" alt="Arrow Down 2"></i>
+								<div class="dropdown-content">
+									<!-- <p>By Tanggal</p>
+									<p>By Time</p>
+									<p>Terbaru</p> -->
+
+									<!-- 
+										
+									-->
+								</div>
+							</div>
+						</div>
+						<div class="create-task display-task" id="createTASK"> <!--CREATE TASK-->
+							<div class="insert-task">
+								<input type="checkbox" disabled>
+								<input type="text" id="" placeholder="Masukan Nama Tugas">
+							</div>
+							<div class="decs-date">
+								<label for="decsINPUT" class="crt-task-decs">
+									<img src="./assets/icons/menu.svg" alt="Menu">
+									<input type="text" id="decsINPUT" placeholder="Deskripsi Tugas (Opsional)">
+								</label>
+								<label for="dateINPUT" class="crt-task-date">
+									<img src="./assets/icons/Calendar.svg" alt="Date">
+									<input type="text" id="dateINPUT" placeholder="Tanggal & Waktu">
+								</label>
+							</div>
+						</div>
+						<div class="result-task"> <!--RESULT TASK-->
+							<ul class="task-list">
+								<li class=" do-lists" id="">
+									<!-- <div class="do-list"> -->
+										<div class="frame-result-task">
+											<div class="sub-frame-result-task">
+												<input type="checkbox" class="" id="">
+												<p class="title-task">Product Design</p>
+												<span class="badge" id=""><p>Badge</p></span>
+												<i class="more" id=""><img src="./assets/icons/more-vertical.svg" alt=""></i>
+											</div>
+											<p class="decs" id="">Description</p>
+										</div>
+										<div class="accordion-button" id="">
+											<i><img src="./assets/icons/Arrow - Down 2.svg" alt="Icon"></i>
+										</div>
+										<div class="accordion-content"> <!--ACCORDION SECTION-->
+											<ul class="sub-task-list">
+												<div class="frame-sub-task-list">
+													<p>Subtask</p>
+													<div class="botton-two">
+														<i><img src="./assets/icons/Plus - 2.svg" alt="Tambah tugas"></i>	
+														<p>Tambah</p>
+													</div>
+												</div>
+												<li class="sub-do-list">
+													<input type="checkbox"  class="" id="">
+													<p class="title-sub-task">Title</p>
+													<i class="deleted-sub-do-list" id=""><img src="./assets/icons/trash.svg" alt="Icon"></i>
+												</li>
+											</ul>
+										</div>
+									<!-- </div>	 -->
+								</li>
+								<li class=" do-lists" id="">
+									<!-- <div class="do-list"> -->
+										<div class="frame-result-task">
+											<div class="sub-frame-result-task">
+												<input type="checkbox" class="" id="">
+												<p class="title-task">Product Design</p>
+												<span class="badge" id=""><p>Badge</p></span>
+												<i class="more" id=""><img src="./assets/icons/more-vertical.svg" alt=""></i>
+											</div>
+											<p class="decs" id="">Description</p>
+										</div>
+										<div class="accordion-button" id="">
+											<i><img src="./assets/icons/Arrow - Down 2.svg" alt="Icon"></i>
+										</div>
+										<div class="accordion-content">
+											<ul class="sub-task-list">
+												<div class="frame-sub-task-list">
+													<p>Subtask</p>
+													<div class="botton-two">
+														<i><img src="./assets/icons/Plus - 2.svg" alt="Tambah tugas"></i>	
+														<p>Tambah</p>
+													</div>
+												</div>
+												<li class="sub-do-list">
+													<input type="checkbox"  class="" id="">
+													<p class="title-sub-task">Title</p>
+													<i class="deleted-sub-do-list" id=""><img src="./assets/icons/trash.svg" alt="Icon"></i>
+												</li>
+											</ul>
+										</div>
+									<!-- </div>	 -->
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="output"> <!--OUTPUT SECTION-->
+					<div class="out-title">
+						<i><img src="./assets/icons/Arrow - Right 2.svg" alt="Arrow Up 2"></i>
+						<p>Terselesaikan</p>
+						<span><p>(2 Tugas)</p></span>
+					</div>
+					<div class="out-list-item">
+						
+					</div>
+				</section>
+			</div>
+		</main>
+		<!-- <footer></footer> -->
+		<script type="text/javascript" src="./assets/js/app.js"></script>
+	</body>
+</html>
