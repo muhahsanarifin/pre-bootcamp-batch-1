@@ -31,8 +31,8 @@ function handleENTER () {
     ` <li class=" do-lists" id="">
 					<div class="frame-result-task">
 						<div class="sub-frame-result-task">
-							<input type="checkbox" id="doneTask">
-							<label for="doneTask"><p class="title-task">${this.value}</p></label>
+							<input type="checkbox" id=""> <!--Temp Issue-->
+							<label><p class="title-task">${this.value}</p></label>
 							<span class="badge" id=""><p>Badge</p></span>
 							<i class="more" id=""><img src="./assets/icons/more-vertical-black.svg" alt=""></i>
 						</div>
@@ -51,14 +51,15 @@ function handleENTER () {
 								</div>
 							</div>
 							<li class="sub-do-list">
-								<input type="checkbox" class="" id="doneSubTask">
-								<label for="doneSubTask"><p class="title-sub-task">Title</p></label>
+								<input type="checkbox" class="" id=""> <!--Temp Issue-->
+								<label><p class="title-sub-task">Title</p></label>
 								<i class="deleted-sub-do-list" id=""><img src="./assets/icons/trash.svg" alt="Icon"></i>
 							</li>
 						</ul>
 					</div>
 			</li>
-		` );
+		`
+  );
 
 	this.value ="";
 }
