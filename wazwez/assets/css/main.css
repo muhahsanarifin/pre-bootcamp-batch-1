@@ -4,12 +4,12 @@
 /* || ROOT COLORS */
 :root {
 	--bg-color: #FFFFFF;
-	--font-botton-color: #FFFFFF;
+	--font-botton-color: #FFFFFF; /* Including Checkbox Color*/
 	--primary-color:#FF5F26;
 	--primary-text-color: #293038;
 	--secondary-text-color: #7A7F83;
 	--badge-color: #FFEBD3;
-	--out-border-top: #CCCED2;
+	--out-border-top: #CCCED2; /* Including Checkbox Color*/
 	--create-task-and-sub-task-bg: #F5F5F5;
 	--color-font-create-task: #9E9E9E;
 
@@ -262,8 +262,10 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
+
 }
 
+/* New class of Dropdown */
 .dropdown-content-show {
 	display: none;
 }
@@ -291,10 +293,10 @@ main {
 	height: 18px;
 }
 
-/* || CREATE TASK SECTION */
-.create-task {
-	position: relative;
+/* || ADD TASK SECTION */
+.add-task {
 	/* border: 1px solid red; */
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
@@ -320,15 +322,15 @@ main {
 }
 
 .decs-date {
-	position: relative;
 	/* border: 1px solid yellowgreen; */
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	margin-left: 4.4rem;
+	margin-left: 4.9rem;
 }
 
-.create-task,
+.add-task,
 .insert-task input[type="text"],
 .decs-date label input[type="text"] {
 	font-family: 'Poppins', sans-serif;
@@ -372,9 +374,54 @@ main {
 
 /* || CHECKBOX SECTION */
 input[type="checkbox"] {
-	accent-color: var(--primary-color);
-	width: 20px;
-	height: 20px;
+	position: relative;
+	border-radius: 50%;
+	border: 1px solid var(--out-border-top);
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1) ;
+	min-width: 28px;
+	min-height: 28px;
+}
+
+input[type="checkbox"]::before {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 3px;
+	left: 9px;
+	width: 6px;
+	height: 14px;
+	border-style: solid;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	opacity: 0;
+}
+
+input[type="checkbox"]:checked {
+	color: var(--font-botton-color);
+	border-color: var(--primary-color);
+	background: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::before {
+	opacity: 1;
+}
+
+input[type="checkbox"]:checked~label::before {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+label {
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+}
+
+input[type="checkbox"]:checked + label {
+	color: var(--secondary-text-color);
+	text-decoration: line-through;
 }
 
 /* || RESULT TASK SECTION */
@@ -417,29 +464,29 @@ ul.task-list > .do-list {
 } */
 
 .frame-result-task {
-	/* border: 2px solid black; */
+	/* border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
 }
 
 .sub-frame-result-task {
-	/* border: 2px solid green; */
+	/* border: 1px solid green; */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 5px;
 }
 
-/* .title-task {
-	border: 1px solid green;
-} */
+.title-task {
+	position: relative;
+	/* border: 1px solid green; */
+}
 
 .decs {
 	position: relative;
 	/* border: 1px solid red; */
-	/* top: -1rem; */
-	margin-left: 2rem;
+	margin-left: 2.5rem;
 	margin-top: 0;
 	font-size: 12px;
 	color: var(--secondary-text-color);
@@ -461,10 +508,15 @@ ul.task-list > .do-list {
 	font-size: 12px;
 }
 
+.more {
+	cursor: pointer;
+}
+
 .more img {
 	/* border: 1px solid rebeccapurple; */
 	margin-top: 7px;
-	display: none;
+	height: 18px;
+	/* display: none; */
 }
 
 /* .do-list > .accordion-button {
@@ -475,11 +527,11 @@ ul.task-list > .do-list {
 
 /* || ACCORDION SECTION */
 .accordion-button {
-	/* border: 2px solid goldenrod; */
+	/* border: 1px solid goldenrod; */
 	position: absolute;
 	align-self: flex-end;
-	margin-top: 15px;
 	cursor: pointer;
+	margin-top: 0.7rem;
 }
 
 .accordion-content {
@@ -529,6 +581,7 @@ ul.sub-task-list {
 }
 
 li.sub-do-list {
+	/* border: 1px solid red; */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -536,7 +589,7 @@ li.sub-do-list {
 	gap: 10px;
 }
 
-li.sub-do-list > .title-sub-task {
+li.sub-do-list label {
 	/* border: 1px solid yellowgreen; */
 	flex: 1;
 }
@@ -578,10 +631,8 @@ i.deleted-sub-do-list {
 }
 
 /* .out-list-item{
-	border: 2px solid black;
-	
+	border: 2px solid black;	
 } */
-
 
 /* || RESPONSIVE SECTION */
 @media only screen and (max-width: 1280px) {
@@ -624,7 +675,7 @@ i.deleted-sub-do-list {
 		right: 1px;
 	}
 
-	.create-task {
+	.add-task {
 		position: relative;
 		width: 97.6vw;
 		left: 1px;
@@ -695,8 +746,8 @@ i.deleted-sub-do-list {
 		right: 1px;
 	}
 
-	/* || CREATE TASK CUSTOME */
-	.create-task {
+	/* || ADD TASK CUSTOME */
+	.add-task {
 		position: relative;
 		width: 95.6vw;
 	}
@@ -707,7 +758,7 @@ i.deleted-sub-do-list {
 	}
 
 	.decs-date {
-		margin-left: 2.7rem;
+		margin-left: 3.1rem;
 		margin-right: 1rem;
 	}
 
@@ -718,7 +769,6 @@ i.deleted-sub-do-list {
 	#decsINPUT, #dateINPUT {
 		flex: 0.6;
 		border-style: none;
-	
 }
 
 	.title-plus-cta{
@@ -738,10 +788,30 @@ i.deleted-sub-do-list {
 
 	/* || CHECKBOX CUSTOME */
 	input[type="checkbox"] {
-		accent-color: var(--primary-color);
-		width: 12px;
-		height: 12px;
-	}
+	position: relative;
+	border-radius: 50%;
+	border: 1px solid var(--out-border-top);
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1) ;
+	min-width: 18px;
+	min-height: 18px;
+}
+
+input[type="checkbox"]::before {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 2px;
+	left: 5.5px;
+	width: 3px;
+	height: 8px;
+	border-style: solid;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	opacity: 0;
+}
 
 	.button {
 		position: absolute;
@@ -767,6 +837,27 @@ i.deleted-sub-do-list {
 
 	.filter p{
 		font-size: 14px;
+	}
+
+	/* || RESULT TASK */
+	#doneTask{
+		align-self: baseline;
+		margin-top: 1rem;
+	}
+
+	p.title-task {
+		position: relative;
+		font-size: 14px;
+		margin-left: 0.5rem;
+	}
+
+	.sub-frame-result-task {
+		width: 230px;
+	}
+
+	.badge, .more {
+		align-self: flex-start;
+		margin-top: 0.5rem;
 	}
 
 	.dropdown-btn {
