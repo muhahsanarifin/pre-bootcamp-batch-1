@@ -839,7 +839,7 @@ input[type="checkbox"]::before {
 		font-size: 14px;
 	}
 
-	/* || RESULT TASK */
+	/* || RESULT TASK CUSTOME*/
 	#doneTask{
 		align-self: baseline;
 		margin-top: 1rem;
@@ -848,17 +848,28 @@ input[type="checkbox"]::before {
 	p.title-task {
 		position: relative;
 		font-size: 14px;
-		margin-left: 0.5rem;
+		margin-left: 0.3rem;
+	}
+
+	.decs {
+		position: relative;
+		margin-left: 2.3rem;
 	}
 
 	.sub-frame-result-task {
-		width: 230px;
+		position: relative;
+		/* border: 1px solid rebeccapurple; */
+		width: 245px;
 	}
 
 	.badge, .more {
 		align-self: flex-start;
 		margin-top: 0.5rem;
 	}
+
+	/* .accordion-button {
+		border: 1px solid greenyellow;
+	} */
 
 	.dropdown-btn {
 		width: 90px;
