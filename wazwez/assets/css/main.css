@@ -636,6 +636,7 @@ i.deleted-sub-do-list {
 
 /* || RESPONSIVE SECTION */
 @media only screen and (max-width: 1280px) {
+	
 	nav {
 		padding: 0 2rem;
 	}
@@ -643,6 +644,7 @@ i.deleted-sub-do-list {
 }
 
 @media only screen and (max-width: 1024px) {
+	
 	nav {
 		padding: 0;
 	}
@@ -656,7 +658,7 @@ i.deleted-sub-do-list {
 }
 
 @media only screen and (max-width: 768px) {
-
+	
 	nav {
 		padding: 0;
 	}
@@ -748,18 +750,23 @@ i.deleted-sub-do-list {
 
 	/* || ADD TASK CUSTOME */
 	.add-task {
+		/* border: 1px solid green; */
+		align-self: center;
 		position: relative;
-		width: 95.6vw;
+		width: 111%;
 	}
 
 	.insert-task {
-		margin-left: 1.2rem;
-		margin-right: 1rem;
+		/* border: 1px solid green; */
+		margin-left: 0.89rem;
+		margin-right: 0.89rem;
 	}
 
 	.decs-date {
-		margin-left: 3.1rem;
-		margin-right: 1rem;
+		position: relative;
+		/* border: 1px solid rebeccapurple; */
+		margin-left: 44.8px;
+		margin-right: 14.4px;
 	}
 
 	.decs-date label input[type="text"] {
@@ -767,7 +774,7 @@ i.deleted-sub-do-list {
 	}
 
 	#decsINPUT, #dateINPUT {
-		flex: 0.6;
+		flex: 1;
 		border-style: none;
 }
 
@@ -840,7 +847,7 @@ input[type="checkbox"]::before {
 	}
 
 	/* || RESULT TASK CUSTOME*/
-	#doneTask{
+	.sub-frame-result-task input[type="checkbox"] {
 		align-self: baseline;
 		margin-top: 1rem;
 	}
@@ -848,12 +855,12 @@ input[type="checkbox"]::before {
 	p.title-task {
 		position: relative;
 		font-size: 14px;
-		margin-left: 0.3rem;
+		/* margin-left: 0.2rem; */
 	}
 
 	.decs {
 		position: relative;
-		margin-left: 2.3rem;
+		margin-left: 1.86rem;
 	}
 
 	.sub-frame-result-task {
