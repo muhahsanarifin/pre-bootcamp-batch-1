@@ -37,7 +37,7 @@ function handleENTER () {
 						</div>
 						<p class="decs" id="">Description</p>
 					</div>
-					<div class="accordion-button"> <!--ACCORDION SECTION-->
+					<div class="accordion-button" onclick="AccordionClick(this)"> <!--ACCORDION SECTION-->
 						<i><img src="./assets/icons/Arrow - Down 2.svg" alt="Icon"></i>
 					</div>
 					<div class="accordion-content"> 
@@ -63,21 +63,13 @@ function handleENTER () {
 	this.value ="";
 }
 
-// const dropDown = document.querySelectorAll(".accordion-button");
-
-// console.log(dropDown)
-
 // Accordion
-// let index;
-
-/*for (index = 0; index < dropDown.length; index++) {
-  dropDown[index].addEventListener("click", function () {
-    this.classList.toggle("to-open");
-    const subTASKLIST = this.nextElementSibling;
-    if (subTASKLIST.style.maxHeight) {
-      subTASKLIST.style.maxHeight = null;
-    } else {
-      subTASKLIST.style.maxHeight = subTASKLIST.scrollHeight + "px";
-    }
-  });
-}*/
+function AccordionClick(click) {
+	click.classList.toggle("to-open");
+	const subTASKLIST = click.nextElementSibling;
+	if (subTASKLIST.style.maxHeight) {
+		subTASKLIST.style.maxHeight = null;
+	}else {
+		subTASKLIST.style.maxHeight = subTASKLIST.scrollHeight + "px";
+	}
+}
