@@ -315,6 +315,7 @@ main {
 }
 
 .insert-task > input[type="text"] {
+	/* border: 1px solid gold; */
 	border-style: none;
 	font-weight: 500;
 	flex: 1;
@@ -765,6 +766,10 @@ i.deleted-sub-do-list {
 		/* border: 1px solid green; */
 		margin-left: 1rem;
 		margin-right: 2rem;
+	}
+
+	.insert-task > input[type="text"] {
+		flex: 0.5;
 	}
 
 	.decs-date {

@@ -25,7 +25,6 @@ function handleCHANGE () {
 document.getElementById("insertTASK").addEventListener("change", handleENTER);
 
 function handleENTER () {
-	// console.log(this.value);
 	taskLIST.insertAdjacentHTML(
     "afterbegin",
     ` <li class=" do-lists" id="">
@@ -51,7 +50,7 @@ function handleENTER () {
 								</div>
 							</div>
 							<li class="sub-do-list">
-								<input type="checkbox" class="" id=""> <!--Temp Issue-->
+								<input type="checkbox"> <!--Temp Issue-->
 								<label><p class="title-sub-task">Title</p></label>
 								<i class="deleted-sub-do-list" id=""><img src="./assets/icons/trash.svg" alt="Icon"></i>
 							</li>
