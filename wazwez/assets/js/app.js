@@ -19,7 +19,7 @@ const taskLIST = document.getElementById("taskLIST");
 document.getElementById("insertTASK").addEventListener("input",handleCHANGE);
 
 function handleCHANGE () {
-	// console.log(this.value);
+
 }
 
 document.getElementById("insertTASK").addEventListener("change", handleENTER);
@@ -30,10 +30,16 @@ function handleENTER () {
     ` <li class=" do-lists" id="">
 					<div class="frame-result-task">
 						<div class="sub-frame-result-task">
-							<input type="checkbox" id=""> <!--Temp Issue-->
+							<input type="checkbox"> <!--Temp Issue-->
 							<label><p class="title-task">${this.value}</p></label>
 							<span class="badge" id=""><p>Badge</p></span>
-							<i class="more" id=""><img src="./assets/icons/more-vertical-black.svg" alt=""></i>
+							<div class="frame-more-task">
+								<i class="more" onclick="clickMore(this)"><img src="./assets/icons/more-vertical-black.svg" alt="more"></i>
+								<div class="more-tasks open-more-task"> <!--MORE TASKS-->
+									<span class="rename-task"><i><img src="./assets/icons/Edit.svg" alt="Rename"></i><p>Rename Task</p></span>
+									<span class="delete-task"><i><img src="./assets/icons/Delete.svg" alt="Rename"></i><p>Delete Task</p></span>
+								</div>
+							</div>
 						</div>
 						<p class="decs" id="">Description</p>
 					</div>
@@ -58,9 +64,16 @@ function handleENTER () {
 					</div>
 			</li>
 		`
-  );
+	);
 
 	this.value ="";
+}
+
+// More
+function clickMore(more) {
+	more.classList.toggle("click-to-show");
+	const moreTask = more.nextElementSibling;
+		moreTask.classList.toggle("open-more-task");
 }
 
 // Accordion

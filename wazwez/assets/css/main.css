@@ -510,6 +510,7 @@ ul.task-list > .do-list {
 }
 
 .more {
+	/* border: 1px solid rebeccapurple; */
 	cursor: pointer;
 }
 
@@ -517,7 +518,46 @@ ul.task-list > .do-list {
 	/* border: 1px solid rebeccapurple; */
 	margin-top: 7px;
 	height: 18px;
-	/* display: none; */
+}
+
+/* || MORE TASK */
+.frame-more-task {
+	/* border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
+}
+
+.more-tasks {
+	border: 1px solid var(--out-border-top);
+	background-color: var(--bg-color);
+	border-radius: 8px ;
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	margin-top: 2rem;
+	gap: 0.2rem;
+}
+
+.open-more-task {
+	display: none;
+}
+
+.more-tasks span {
+	/* border: 1px solid red; */
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+span.rename-task, span.delete-task {
+	cursor: pointer;
+}
+
+span.rename-task i, span.rename-task p, span.delete-task i, span.delete-task p {
+	margin: 0;
 }
 
 /* .do-list > .accordion-button {
@@ -893,6 +933,21 @@ input[type="checkbox"]::before {
 	/* .accordion-button {
 		border: 1px solid greenyellow;
 	} */
+
+	/* || MORE TASKS CUSTOME */
+	.more-tasks {
+	padding: 0.5rem;
+	margin-top: 2.5rem;
+	gap: 0.2rem;
+}
+
+span.rename-task i img , span.delete-task i img {
+	width: 14px;
+}
+
+span.rename-task p, span.delete-task p {
+	font-size: 8px;
+}
 
 	.dropdown-btn {
 		width: 90px;
