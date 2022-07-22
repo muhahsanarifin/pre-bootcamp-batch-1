@@ -427,7 +427,7 @@ input[type="checkbox"]:checked + label p {
 
 /* || RESULT TASK SECTION */
 /* .result-task {
-	border: 2px solid green;
+	border: 1px solid green;
 } */
 
 ul.task-list {
@@ -465,7 +465,7 @@ ul.task-list > .do-list {
 } */
 
 .frame-result-task {
-	/* border: 1px solid black; */
+	/* border: 1px solid green; */
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
@@ -475,13 +475,23 @@ ul.task-list > .do-list {
 	/* border: 1px solid green; */
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	gap: 5px;
 }
 
+.sub-frame-result-task input[type="checkbox"] {
+	margin-top: 0.7rem;
+}
+
+.sub-frame-result-task label {
+	/* border: 1px solid blue; */
+	max-width: 34rem;
+}
+
 .title-task {
-	position: relative;
 	/* border: 1px solid green; */
+	position: relative;
+	margin-top: 0.8rem;
 }
 
 .decs {
@@ -493,7 +503,7 @@ ul.task-list > .do-list {
 	color: var(--secondary-text-color);
 }
 
-.badge, .more {
+.badge {
 	position: relative;
 	/* border: 1px solid blue; */
 }
@@ -501,30 +511,32 @@ ul.task-list > .do-list {
 .badge p{
 	/* border: 1px solid red; */
 	border-radius: 100px;
-	width: 4rem;
-	height: 1.3rem;
+	min-width: 2.5rem;
 	text-align: center;
 	color: var(--primary-color);
 	background-color: var(--badge-color);
-	font-size: 12px;
+	font-size: 10px;
+	margin-top: 1.2rem;
+	font-weight: 500;
+}
+
+/* || MORE TASK */
+.frame-more-task {
+	position: relative;
+	/* border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
 }
 
 .more {
-	/* border: 1px solid rebeccapurple; */
+	/* border: 1px solid royalblue; */
+	margin-top: 1.1rem;
 	cursor: pointer;
 }
 
 .more img {
 	/* border: 1px solid rebeccapurple; */
-	margin-top: 7px;
 	height: 18px;
-}
-
-/* || MORE TASK */
-.frame-more-task {
-	/* border: 1px solid black; */
-	display: flex;
-	flex-direction: column;
 }
 
 .more-tasks {
@@ -536,7 +548,7 @@ ul.task-list > .do-list {
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
-	margin-top: 2rem;
+	margin-top: 2.5rem;
 	gap: 0.2rem;
 }
 
@@ -560,6 +572,12 @@ span.rename-task i, span.rename-task p, span.delete-task i, span.delete-task p {
 	margin: 0;
 }
 
+span.rename-task p, span.delete-task p {
+	/* border: 1px solid black; */
+	font-size: 12px;
+	width: 5.5rem;
+}
+
 /* .do-list > .accordion-button {
 	border: 1px solid black;
 	flex: 0.1;
@@ -572,7 +590,7 @@ span.rename-task i, span.rename-task p, span.delete-task i, span.delete-task p {
 	position: absolute;
 	align-self: flex-end;
 	cursor: pointer;
-	margin-top: 0.7rem;
+	margin-top: 0.8rem;
 }
 
 .accordion-content {
@@ -587,7 +605,7 @@ span.rename-task i, span.rename-task p, span.delete-task i, span.delete-task p {
 
 /* || SUBTASK LIST SECTION */
 ul.sub-task-list {
-	/* border: 2px solid blue; */
+	/* border: 1px solid blue; */
 	padding: 0;
 }
 
@@ -911,7 +929,7 @@ input[type="checkbox"]::before {
 	p.title-task {
 		position: relative;
 		font-size: 14px;
-		/* margin-left: 0.2rem; */
+		margin-top: 0.9rem;
 	}
 
 	.decs {
@@ -925,19 +943,12 @@ input[type="checkbox"]::before {
 		width: 245px;
 	}
 
-	.badge, .more {
-		align-self: flex-start;
-		margin-top: 0.5rem;
-	}
-
-	/* .accordion-button {
-		border: 1px solid greenyellow;
-	} */
-
 	/* || MORE TASKS CUSTOME */
-	.more-tasks {
+.more-tasks {
+	position: absolute;
 	padding: 0.5rem;
 	margin-top: 2.5rem;
+	margin-left: -4.5rem;
 	gap: 0.2rem;
 }
 
@@ -947,6 +958,7 @@ span.rename-task i img , span.delete-task i img {
 
 span.rename-task p, span.delete-task p {
 	font-size: 8px;
+	width: 3.5rem;
 }
 
 	.dropdown-btn {
