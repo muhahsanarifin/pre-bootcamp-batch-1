@@ -27,7 +27,7 @@ document.getElementById("insertTASK").addEventListener("change", handleENTER);
 function handleENTER () {
 	taskLIST.insertAdjacentHTML(
     "afterbegin",
-    ` <li class=" do-lists" id="">
+    ` <li class=" do-lists">
 					<div class="frame-result-task">
 						<div class="sub-frame-result-task">
 							<input type="checkbox"> <!--Temp Issue-->
@@ -37,7 +37,7 @@ function handleENTER () {
 								<i class="more" onclick="clickMore(this)"><img src="./assets/icons/more-vertical-black.svg" alt="more"></i>
 								<div class="more-tasks open-more-task"> <!--MORE TASKS-->
 									<span class="rename-task"><i><img src="./assets/icons/Edit.svg" alt="Rename"></i><p>Rename Task</p></span>
-									<span class="delete-task"><i><img src="./assets/icons/Delete.svg" alt="Rename"></i><p>Delete Task</p></span>
+									<span class="delete-task" onclick="deleteTask(this)"><i><img src="./assets/icons/Delete.svg" alt="Rename"></i><p>Delete Task</p></span>
 								</div>
 							</div>
 						</div>
@@ -69,9 +69,15 @@ function handleENTER () {
 	this.value ="";
 }
 
+// Delete Task
+function deleteTask(mtask) {
+	mtask.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+}
+
 // More
 function clickMore(more) {
 	more.classList.toggle("click-to-show");
+	
 	const moreTask = more.nextElementSibling;
 		moreTask.classList.toggle("open-more-task");
 }
